@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
  * @date 2019/7/17 14:21
  **/
 @Slf4j
-@Component("startupRunner")
+//@Component("startupRunner")
 public class FxMain implements CommandLineRunner {
 
     private static ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(5,10, 30, TimeUnit.SECONDS,

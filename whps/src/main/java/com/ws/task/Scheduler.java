@@ -19,8 +19,8 @@ import java.util.concurrent.TimeUnit;
  * @date 2019-05-18 23:44
  **/
 @Slf4j
-@Component
-@EnableScheduling
+//@Component
+//@EnableScheduling
 public class Scheduler {
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
     @Autowired
@@ -35,7 +35,7 @@ public class Scheduler {
     //google服务器时间段
     //@Scheduled(cron="0 */5 3-19 * * ?")
     //中国服务器时间段1
-    @Scheduled(cron="0 */1 * * * ?")
+    //@Scheduled(cron="0 */1 * * * ?")
     public void testTasks() {
         threadPoolExecutor.submit(() ->
         {
@@ -55,7 +55,7 @@ public class Scheduler {
         System.out.println("定时任务执行时间：" + dateFormat.format(new Date()));
     }*/
 
-    @Scheduled(cron = "0 */5 * * * ?")
+    //@Scheduled(cron = "0 */5 * * * ?")
     public void testTasks5() {
         log.error("定时任务执行时间：" + dateFormat.format(new Date()));
     }

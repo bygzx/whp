@@ -21,6 +21,6 @@ public class TestController {
 
     @RequestMapping(value = "/testList", method = RequestMethod.GET)
     public Object testList() {
-        return storeDataService.getPriceSecList();
+        return storeDataService.cc();
     }
 }

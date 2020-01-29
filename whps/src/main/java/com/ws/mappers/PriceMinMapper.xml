@@ -5,5 +5,20 @@
 
 <mapper namespace="com.ws.mappers.PriceMinMapper">
 
-
+    <select id="getLastPriceLimit" resultType="com.ws.entity.PriceMin">
+        select * from price_min
+        where
+        1=1
+        <choose>
+        <when test='c1 !=null and c1.size()>0'>
+            <foreach item="item" index="index" collection="c1" open=" and(" separator=" or " close=")">
+                ( c =#{item.c} and t = #{item.t} )
+            </foreach>
+        </when>
+        <otherwise>
+            and 1 = 2
+        </otherwise>
+        </choose>
+        limit 20
+    </select>
 </mapper>
